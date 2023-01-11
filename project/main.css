@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#mainGame {
+  display: flex;
+  /* align-items: center; */
+  margin-top: 200;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+}
+.card .front-view img {
+  width: 40px;
+}
+
+.card .back-view img {
+  max-width: 80px;
+}
+
+.container {
+  height: 500px;
+  width: 500px;
+  background: linear-gradient(to right, #679efc, #0027ec);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 0 10px;
+}
+.cards,
+.card,
+.view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cards {
+  height: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.cards .card {
+  height: calc(100% / 4 - 10px);
+  width: calc(100% / 4 - 10px);
+  cursor: pointer;
+
+  position: relative;
+  perspective: 800px;
+  transform-style: preserve-3d;
+}
+.cards .card .view {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 25px 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.616);
+
+  position: absolute;
+  transition: transform 0.25s linear;
+  backface-visibility: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+.card .front-view span {
+  font-size: 40px;
+  color: #6563ff;
+}
+.card .back-view {
+  /* display: none; */
+
+  transform: rotateY(-180deg);
+}
+#prog {
+  accent-color: green;
+}
+
+/* .card:hover .back-view{
+    transform: rotateY(0);
+}
+.card:hover .front-view{
+    transform: rotateY(180deg);
+} js 3*/
+
+/*JS 3*/
+.card.flip .back-view {
+  transform: rotateY(0);
+}
+.card.flip .front-view {
+  transform: rotateY(180deg);
+}
+/*JS 7.2*/
+.card.shake {
+  animation: shake 0.35s ease-in-out;
+}
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-13px);
+  }
+  40% {
+    transform: translateX(13px);
+  }
+  60% {
+    transform: translateX(-8px);
+  }
+  80% {
+    transform: translateX(8px);
+  }
+}
+
+#menu {
+  align-self: flex-start;
+
+  margin-left: 20px;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
