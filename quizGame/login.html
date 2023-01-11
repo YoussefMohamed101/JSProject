@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="loginStyle.css" />
+  </head>
+  <body>
+    <div id="header">
+      <div id="logo">
+        <img
+          src="images/321756823_875371597115913_5893383703925415915_n-removebg-preview.png"
+          alt="this image not exist"
+          style="height: 40px; width: 60px; margin: 0px"
+        />
+      </div>
+
+      <div id="audio">
+        <a href="#"
+          ><i
+            id="sound"
+            class="fa-solid fa-volume-xmark"
+            onclick="audioo()"
+            type="off"
+          ></i
+        ></a>
+      </div>
+    </div>
+    <div id="gameName"><b> QUIZ GAME</b></div>
+    <input
+      id="email"
+      type="email"
+      placeholder="Enter Your Email"
+    
+    />
+    <input
+      id="name"
+      type="text"
+      placeholder="Enter Your Name"
+    />
+    <select id="choice" onchange="category()">
+      <option value="">Choose Your Category</option>
+      <option value="Math">Maths</option>
+      <option value="English">English</option>
+      <option value="Images">Images</option>
+    </select>
+    <button id="submit" onclick="category()"><b>Submit</b></button>
+    <!--<button id="Submit">Submit</button>-->
+    <!-- <a href="#"><input id="Submit" type="button" value="Submit"/></a> -->
+    <div id="circle1"></div>
+    <div id="circle2"></div>
+    <div id="circle3"></div>
+    <div id="circle4"></div>
+    <div id="circle5"></div>
+    <div id="circle6"></div>
+    <div id="circle7"></div>
+    <script src="script.js" ></script>
+  </body>
+</html>

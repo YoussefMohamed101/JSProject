@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="css.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="header">
+      <div id="logo">
+        <img
+          src="images/321756823_875371597115913_5893383703925415915_n-removebg-preview.png"
+          alt="this image not exist"
+          style="height: 40px; width: 60px; margin: 0px"
+        />
+      </div>
+
+      <div id="audio">
+        <a href="#"
+          ><i
+            id="sound"
+            class="fa-solid fa-volume-xmark"
+            onclick="audioo()"
+            type="off"
+          ></i
+        ></a>
+      </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="../index.html">Guess the Word</a>
+      <a id="active" href="##">Quiz Game</a>
+      <a href="../MemoryGame/start_proj.html">Matching game</a>
+      <a href="../project/index.html">Memory game</a>
+    </div>
+    <span id="menu" style="font-size: 30px; cursor: pointer" onclick="openNav()"
+      >&#9776;</span
+    >
+    <div id="gameName"><b> QUIZ GAME</b></div>
+    <a href="./login.html"
+      ><button><b>START</b></button></a
+    >
+    <div id="circle1"></div>
+    <div id="circle2"></div>
+    <div id="circle3"></div>
+    <div id="circle4"></div>
+    <div id="circle5"></div>
+    <div id="circle6"></div>
+    <div id="circle7"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
