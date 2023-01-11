@@ -74,9 +74,8 @@ function showRandom() {
   do {
     randomIndex = Math.floor(Math.random() * imagesAndNames.length);
     if (checkedData == imagesAndNames.length) {
-      if (!alert("finish")) {
-        window.location.reload();
-      }
+      document.getElementById("finalScore").innerText = score;
+      document.getElementById("lastscreen").style.display = "block";
     }
     if (imagesAndNames[randomIndex].checked == true) {
       checkedData++;
@@ -97,7 +96,11 @@ function startTimer() {
   if (!interval) {
     interval = setInterval(() => {
       if (width <= 0) {
-        checkanswer();
+        // checkanswer();
+        document.getElementById("finalScore").innerText = score;
+        document.getElementById("lastscreen").style.display = "block";
+
+        clearInterval(interval);
       } else {
         if (width <= 20) {
           progressBar.style.backgroundColor = "red";
@@ -129,11 +132,18 @@ function showLetters() {
     letter.ondragstart = function () {
       GiveId(letter);
     };
+    letter.onmouseover = function () {
+      readButtons(letter);
+    };
+    letter.onmouseleave = function () {
+      stopReadButtons();
+    };
     element.appendChild(letter);
   }
 }
 
 function GiveId(imgelem) {
+  console.log("asdasdas");
   Obj = imgelem;
 }
 
@@ -160,27 +170,38 @@ function readWord() {
   speechSynthesis.speak(Utterance);
 }
 
+function readButtons(element) {
+  var Utterance;
+  if (element.id == "") {
+    Utterance = new SpeechSynthesisUtterance(element.innerText);
+  } else {
+    Utterance = new SpeechSynthesisUtterance(element.id);
+  }
+  Utterance.rate = 1;
+  speechSynthesis.speak(Utterance);
+}
+
+function stopReadButtons(element) {
+  speechSynthesis.cancel();
+}
+
 function checkanswer() {
   console.log(word.toLowerCase());
   console.log(Answer);
   if (word.toLowerCase() == Answer) {
-    if (!alert("correct")) {
-      score += 100;
-      document.querySelector("span").innerText = score;
-      imagesAndNames[randomIndex].checked = true;
-      while (word.length > 0) {
-        removechar();
-      }
-      showRandom();
+    score += 100;
+    document.getElementById("changeScore").innerText = score;
+    imagesAndNames[randomIndex].checked = true;
+    while (word.length > 0) {
+      removechar();
     }
+    showRandom();
   } else {
-    if (!alert("Wrong")) {
-      imagesAndNames[randomIndex].checked = true;
-      while (word.length > 0) {
-        removechar();
-      }
-      showRandom();
+    imagesAndNames[randomIndex].checked = true;
+    while (word.length > 0) {
+      removechar();
     }
+    showRandom();
   }
 }
 
@@ -190,4 +211,8 @@ function openNav() {
 
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
+}
+
+function restartGame() {
+  window.location.reload();
 }

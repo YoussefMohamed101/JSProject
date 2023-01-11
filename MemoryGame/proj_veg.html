@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vegetables </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet">
+    <style>
+      body{
+      
+        background-image:url("./imgs/pexels-dominika-roseclay-977893.jpg");
+       /* background-color: rgb(23, 80, 99);*/
+        
+       height: 60vh;
+       background-repeat: no-repeat;
+       
+       background-size: cover;
+       background-position: center;
+       
+      
+       
+        
+
+      }
+       img:hover{
+
+        transform: scale(2,2);
+
+
+       }
+       img{
+
+          width: 120px;
+          transition: 3s;
+          margin: 60px;
+
+       }
+       #1{
+        height:  40px;
+
+       }
+
+        p{
+
+         margin: 20px;
+         text-shadow: 10px 10px 10px gray;
+
+        }
+        div{
+
+            
+            margin: 30px;
+            border-radius: 20px 30px 40px 0px;
+            box-shadow: 10px 10px 10px gray;
+            transition: 2s;
+            
+            
+        }
+        div:hover{
+            
+            transform: translate(20px,20px);
+            color: hotpink;
+            
+
+
+
+
+        }
+
+        h1{
+
+         text-align: center;
+         text-shadow: 5px 5px 5px grey ;
+        font-size: 40px;
+        font-family: 'Rubik Gemstones', cursive;
+
+
+        }
+        #dd{
+
+
+            display: flex;
+           
+            box-shadow: none;
+
+            
+        }
+        #ca{
+            position: relative;
+            animation-name: Movecar;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            width: 25%;
+        }
+
+       @keyframes Movecar {
+            0%{left:10px;right:300px;}
+              
+
+            100%{left:500px;right:1000px;}
+        }
+
+        
+
+        @keyframes Movecar {
+            0%{left:10px;right:300px;}
+              
+
+            100%{left:500px;right:1000px;}
+        }
+       #im{
+
+
+        display: flex;
+        margin-top: 60px;
+        box-shadow: none;
+        
+       }
+     
+
+    
+    </style>
+</head>
+<body>
+    
+    <h1>Vegetables Game</h1>
+    <div id="dd" >
+    <div 
+        
+        ondragover="event.preventDefault()"
+        ondrop="a(this)"
+       
+        id="div1"
+      
+        style="width:170px;height: 200px;border: 5px solid green;">
+        <h2><p>cucumber</p></h2>
+    </div>
+
+    <div 
+    ondragover="event.preventDefault()"
+    ondrop="b(this)"
+    id="div2"
+    style="width:170px;height: 200px;border: 5px solid yellow; ">
+    <h2><p>pepper</p></h2>
+   
+</div>
+
+<div 
+        ondragover="event.preventDefault()"
+        ondrop="c(this)"
+        id="div3"
+        style="width:170px;height:200px  ;border: 5px solid red;">
+       <h2> <p>Tomato</p></h2>
+        
+    </div>
+    <div 
+        
+        ondragover="event.preventDefault()"
+        ondrop="d(this)"
+       
+        id="div4"
+      
+        style="width:170px;height: 200px;border: 5px solid orange;">
+        <h2><p>Carrot</p></h2>
+    </div>
+
+    <div 
+    ondragover="event.preventDefault()"
+    ondrop="e(this)"
+    id="div5"
+    style="width:170px;height: 200px;border: 5px solid violet ">
+    <h2><p>Eggplant</p></h2>
+   
+</div>
+
+<div 
+        ondragover="event.preventDefault()"
+        ondrop="f(this)"
+        id="div6"
+        style="width:170px;height:200px  ;border: 5px solid brown;">
+       <h2> <p>potatoes</p></h2>
+        
+    </div>
+</div>
+
+
+   
+
+
+
+    <img draggable="true" src="./imgs/cucomber 1.png" title="green" id="3" ondragstart="GiveId(this)">
+    <img draggable="true" src="./imgs/pexels-kaboompics-com-5617 1.png" title="red" id="1" ondragstart="GiveId(this  )"   >
+    <img draggable="true" src="./imgs/pexels-serhii-demchenko-8367573 1.png" title="yellow" id="2" ondragstart="GiveId(this)">
+    <img draggable="true" src="./imgs/pexels-anna-tarazevich-5621248 1.png" title="Orange" id="4" ondragstart="GiveId(this  )"   >
+    <img draggable="true" src="./imgs/pexels-djaheda-richers-6576750 1.png" title="violet" id="5" ondragstart="GiveId(this)">
+    <img draggable="true" src="./imgs/ccccc.png" title="brown" id="6" ondragstart="GiveId(this)">
+
+
+
+    <script>
+
+        var imgObj;
+        function GiveId(imgelem){
+
+            console.log("Image drag start");
+            imgObj=imgelem;
+                     
+        }
+        function a(elem){
+            const Utterance = new SpeechSynthesisUtterance("cucumber");
+           Utterance.rate = 1;
+           speechSynthesis.speak(Utterance);
+            if(imgObj.id=="3"){
+                var img=imgObj
+              
+                elem.appendChild(img);
+                
+            }
+        }
+        function b(elem){
+            const Utterance = new SpeechSynthesisUtterance("pepper");
+           Utterance.rate = 1;
+           speechSynthesis.speak(Utterance);
+            if(imgObj.id=="2"){
+                var img=imgObj
+             
+                elem.appendChild(img);
+            }
+  }
+  function c(elem){
+    const Utterance = new SpeechSynthesisUtterance("Tomato");
+           Utterance.rate = 1;
+           speechSynthesis.speak(Utterance);   
+             if(imgObj.id=="1"){
+                var img=imgObj
+               
+                elem.appendChild(img);
+            }
+        }
+            function d(elem){
+    const Utterance = new SpeechSynthesisUtterance("carrot");
+           Utterance.rate = 1;
+           speechSynthesis.speak(Utterance);   
+             if(imgObj.id=="4"){
+                var img=imgObj
+               
+                elem.appendChild(img);
+            }
+        }
+            function e(elem){
+    const Utterance = new SpeechSynthesisUtterance("Eggplant");
+           Utterance.rate = 1;
+           speechSynthesis.speak(Utterance);   
+             if(imgObj.id=="5"){
+                var img=imgObj
+               
+                elem.appendChild(img);
+            }
+        }
+            function f(elem){
+    const Utterance = new SpeechSynthesisUtterance("potatoes");
+           Utterance.rate = 1;
+           speechSynthesis.speak(Utterance);   
+             if(imgObj.id=="6"){
+                var img=imgObj
+               
+                elem.appendChild(img);
+            } 
+        }    
+     
+  
+ 
+ 
+
+
+ 
+
+
+  
+
+
+    </script>
+</body>
+</html>

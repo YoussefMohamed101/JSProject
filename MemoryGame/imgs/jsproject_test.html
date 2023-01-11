@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drag and drop </title>
+    <style>
+
+        body{
+
+         
+         background-color: white;
+
+
+        }
+        img{
+            width: 70px;
+        }
+
+        p{
+
+         margin: 20px;
+         text-shadow: 10px 10px 10px gray;
+
+        }
+        div{
+
+
+            margin: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div> 
+        
+        ondragover="event.preventDefault()"
+        ondrop="DropElement(this)"
+       
+        id="div1"
+      
+        style="width:140px;height: 140px;border: 5px solid rgb(0, 255, 183);">
+        <h2><p>Apple</p></h2>
+    </div>
+
+    <div>
+    ondragover="event.preventDefault()"
+    ondrop="Element(this)"
+    id="div2"
+    style="width:140px;height: 140px;border: 5px solid rgb(76, 74, 185);">
+    <h2><p>Banana</p></h2>
+   
+    </div>
+
+<div >
+        ondragover="event.preventDefault()"
+        ondrop="Drop(this)"
+        id="div3"
+        style="width:140px;height:140px  ;border: 5px solid rgb(255, 221, 0);">
+       <h2> <p>strawberry</p></h2>
+        
+</div>
+
+
+
+    <form>
+
+    <input type="image" value="play"  draggable="true" src="appl.jpg" style="width:50px" onclick="play()" ondragstart="GiveId(this)"     >
+    <input type="image "   value="play" draggable="true" src="babana.jpg" style="width:50px" onclick="play()" ondragstart="GiveId(this)"  >
+    <input type="image"  value="play" src="stru.jpg" draggable="true" style="width:50px" onclick="play()"  ondragstart="GiveId(this)" >
+    <audio src="audio/bgsound.mp3" id= "aud" controls></audio>
+    </form>
+    <script>
+        var imgObj;
+        function GiveId(imgelem){
+            console.log("Image drag start");
+            imgObj=imgelem;
+                
+        }
+        function DropElement(elem){
+          
+            if(imgObj.id=="1"){
+                var img=imgObj
+              
+                elem.appendChild(img);
+            }
+        }
+        function Element(elem){
+          
+            if(imgObj.id=="2"){
+                var img=imgObj
+             
+                elem.appendChild(img);
+            }
+  }
+  function Drop(elem){
+          
+    if(imgObj.id=="3"){
+                var img=imgObj
+               
+                elem.appendChild(img);
+            }
+
+     
+  }
+ /* let play = document.getElementById("1")
+  function playmusic() {
+    let audio = new Audio("audio.mp3")
+    audio.play
+  }play.addEventListener("click",playmusic)Drop*/
+
+  function play() {
+    
+  var a = document.getElementById("aud").play()
+
+  }
+
+  function i (){
+
+    play ()
+
+  }
+
+
+  
+
+
+    </script>
+</body>
+</html>

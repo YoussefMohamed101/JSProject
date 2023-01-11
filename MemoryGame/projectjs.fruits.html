@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet">
+    <style>
+      body{
+      
+        background-image:url("./imgs/pexels-burak-kostak-68899.jpg");
+       
+        
+       height: 60vh;
+       background-repeat: no-repeat;
+       
+       background-size: cover;
+       background-position: center;
+       
+      
+       
+        
+
+      }
+       img:hover{
+
+        transform: scale(2,2);
+
+
+       }
+       img{
+
+        width: 100px;
+          transition: 3s;
+          margin: 60px;
+          
+
+       }
+
+        p{
+
+         margin: 20px;
+         text-shadow: 10px 10px 10px gray;
+
+        }
+        div{
+
+            
+            margin: 30px;
+            border-radius: 20px 30px 40px 0px;
+            box-shadow: 10px 10px 10px gray;
+            transition: 2s;
+            
+            
+        }
+        div:hover{
+            
+            transform: translate(20px,20px);
+            color: hotpink;
+            
+
+
+
+
+        }
+
+        h1{
+
+         text-align: center;
+         text-shadow: 5px 5px 5px grey ;
+        font-size: 40px;
+        font-family: 'Rubik Gemstones', cursive;
+
+
+        }
+        #dd{
+            display: flex;
+           
+           box-shadow: none;
+ 
+
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <h1>Fruits Game</h1>
+
+    
+
+
+<div id="dd">
+    <div 
+        
+        ondragover="event.preventDefault()"
+        ondrop="a(this)"
+       
+        id="div1"
+      
+        style="width:170px;height: 210px;border: 5px solid red;">
+        <h2><p>Apple</p></h2>
+    </div>
+
+    <div 
+    ondragover="event.preventDefault()"
+    ondrop="b(this)"
+    id="div2"
+    style="width:170px;height:210px;border: 5px solid yellow; ">
+    <h2><p>Banana</p></h2>
+   
+</div>
+
+<div 
+        ondragover="event.preventDefault()"
+        ondrop="c(this)"
+        id="div3"
+        style="width:170px;height:210px  ;border: 5px solid green">
+       <h2> <p>Mango</p></h2>
+        
+    </div>
+
+
+    <div 
+        
+    ondragover="event.preventDefault()"
+    ondrop="d(this)"
+   
+    id="div4"
+  
+    style="width:170px;height: 210px;border: 5px solid violet;">
+    <h2><p>Grape</p></h2>
+</div>
+
+<div 
+ondragover="event.preventDefault()"
+ondrop="e(this)"
+id="div5"
+style="width:170px;height: 210px;border: 5px solid brown; ">
+<h2><p>kiwi</p></h2>
+
+</div>
+
+<div 
+    ondragover="event.preventDefault()"
+    ondrop="f(this)"
+    id="div6"
+    style="width:170px;height:210px  ;border: 5px solid orange">
+   <h2> <p>Tangerine</p></h2>
+    
+</div>
+
+
+</div>
+
+
+
+
+    <img draggable="true" src="./imgs/proj_img/babana 1.png" title="yellow" id="1" ondragstart="GiveId(this)">
+    <img draggable="true" src="./imgs/proj_img/appl 1.png" title="red" id="2" ondragstart="GiveId(this)">
+    <img draggable="true" src="./imgs/proj_img/images 1.png" title="green" id="3" ondragstart="GiveId(this)">
+    <img draggable="true" src="./imgs/pexels-laker-6156986 (1) 1.png" title="Brown" id="4" ondragstart="GiveId(this)">
+    <img draggable="true" src="./imgs/pngtree-a-bunch-of-grapes-png-image_2448843 1.png" title="violet" id="5" ondragstart="GiveId(this)">
+    <img draggable="true" src="./imgs/pngtree-citrus-food-peel-fresh-png-image_3357156 1.png" title="Orange" id="6"ondragstart="GiveId(this)">
+   
+   
+    
+    
+    <script>
+
+        var imgObj;
+        function GiveId(imgelem){
+
+            console.log("Image drag start");
+            imgObj=imgelem;
+                     
+        }
+        function a(elem){
+            const Utterance = new SpeechSynthesisUtterance("Apple");
+           Utterance.rate = 1;
+           speechSynthesis.speak(Utterance);
+            if(imgObj.id=="2"){
+                var img=imgObj
+              
+                elem.appendChild(img);
+                
+            }
+        }
+        function b(elem){
+            const Utterance = new SpeechSynthesisUtterance("Banana");
+           Utterance.rate = 1;
+           speechSynthesis.speak(Utterance);
+            if(imgObj.id=="1"){
+                var img=imgObj
+             
+                elem.appendChild(img);
+            }
+  }
+  function c(elem){
+    const Utterance = new SpeechSynthesisUtterance("Mango");
+           Utterance.rate = 1;
+           speechSynthesis.speak(Utterance);   
+    if(imgObj.id=="3"){
+                var img=imgObj
+               
+                elem.appendChild(img);
+            }
+        }
+            function d(elem){
+    const Utterance = new SpeechSynthesisUtterance("Grape");
+           Utterance.rate = 1;
+           speechSynthesis.speak(Utterance);   
+    if(imgObj.id=="5"){
+                var img=imgObj
+               
+                elem.appendChild(img);
+            
+    }
+}
+
+    function e(elem){
+    const Utterance = new SpeechSynthesisUtterance("Kiwi");
+           Utterance.rate = 1;
+           speechSynthesis.speak(Utterance);   
+    if(imgObj.id=="4"){
+                var img=imgObj
+               
+                elem.appendChild(img);
+            
+    }
+}
+
+            function f(elem){
+    const Utterance = new SpeechSynthesisUtterance("Tangerine");
+           Utterance.rate = 1;
+           speechSynthesis.speak(Utterance);   
+    if(imgObj.id=="6"){
+                var img=imgObj
+               
+                elem.appendChild(img);
+            }
+        }
+           
+                  
+     
+  
+ 
+ 
+
+
+ 
+
+
+  
+
+
+    </script>
+</body>
+</html>

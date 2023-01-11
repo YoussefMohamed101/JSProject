@@ -14,19 +14,24 @@
   </head>
 
   <body>
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-        >&times;</a
+    <di class="left">
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
+        <a href="../index.html">Guess the Word</a>
+        <a href="../quizGame/index.html">Question game</a>
+        <a href="../MemoryGame/start_proj.html">Matching game</a>
+        <a id="active" href="##">Memory game</a>
+      </div>
+      <span
+        id="menu"
+        style="font-size: 30px; cursor: pointer"
+        onclick="openNav()"
+        >&#9776;</span
       >
-      <a href="../GuessTheWord/index.html">Guess the Word</a>
-      <a href="index.html">Question game</a>
-      <a href="#">Matching game</a>
-      <a href="#">Memory game</a>
-    </div>
-    <span id="menu" style="font-size: 30px; cursor: pointer" onclick="openNav()"
-      >&#9776;</span
-    >
-    <div id="mainGame">
+    </di>
+    <div id="cont">
       <div class="container">
         <div>Counter : <span id="counter"></span></div>
         <div>
@@ -133,7 +138,6 @@
         </ul>
       </div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>

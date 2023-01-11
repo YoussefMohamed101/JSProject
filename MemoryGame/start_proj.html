@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>start</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-image: url("./imgs/pexels-bo-shou-6921010.jpg");
+        height: 60vh;
+        background-repeat: no-repeat;
+
+        background-size: cover;
+        background-position: center;
+      }
+      * {
+        margin: 4px;
+      }
+      form {
+        display: inline;
+        padding: 30px;
+        margin: 5px;
+      }
+      form > input {
+        display: inline;
+        width: 70px;
+        transition: 3s;
+      }
+
+      form > input:hover {
+        transform: scale(2, 2);
+        color: hotpink;
+      }
+      h1 {
+        color: white;
+        text-align: center;
+        position: relative;
+        animation-name: anim1;
+        animation-iteration-count: infinite;
+      }
+      @keyframes anim1 {
+        from {
+          color: black;
+          background-color: white;
+        }
+        to {
+          font-size: 50px;
+          color: white;
+          background-color: black;
+        }
+      }
+      img {
+        position: relative;
+
+        animation-name: Movecar;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes Movecar {
+        0% {
+          left: 0px;
+          right: 300px;
+        }
+
+        100% {
+          left: 500px;
+          right: 1000px;
+        }
+      }
+      #menu {
+        align-self: flex-start;
+        margin-left: 20px;
+      }
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        text-align: center;
+      }
+
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      #active {
+        font-weight: bold;
+        color: red;
+      }
+
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="../index.html">Guess the Word</a>
+      <a href="../quizGame/index.html">Question game</a>
+      <a id="active" href="##">Matching game</a>
+      <a href="../project/index.html">Memory game</a>
+    </div>
+    <span id="menu" style="font-size: 30px; cursor: pointer" onclick="openNav()"
+      >&#9776;</span
+    >
+
+    <h1 onhover="y()" style="margin-top: 0.009px">Welcome To Yara's Game</h1>
+
+    <form action="./projectjs.fruits.html">
+      <input
+        type="image"
+        src="./imgs/back_fruit.jpg"
+        onclick="f()"
+        width="80%"
+        title="you want to go to fruits section?"
+      />
+    </form>
+    <form action="./proj_veg.html" target="_blank">
+      <input
+        type="image"
+        src="./imgs/pexels-polina-tankilevitch-3872370 1.png"
+        onclick="v()"
+        width="80%"
+        title="you want to go to Vegetables section?"
+      />
+    </form>
+
+    <form action="prpj_transport.html" target="_blank">
+      <input
+        type="image"
+        src="./imgs/b3bfc2a4-2819-4344-8924-7d2d3ac55d38 1.png"
+        onclick="t()"
+        width="80%"
+        title="you want to go to Transport section?"
+      />
+    </form>
+
+    <img src="./imgs/plane.png" width="1200px" />
+
+    <script>
+      function f() {
+        const Utterance = new SpeechSynthesisUtterance("Fruits");
+        Utterance.rate = 1;
+        speechSynthesis.speak(Utterance);
+      }
+      function v() {
+        const Utterance = new SpeechSynthesisUtterance("Vegetables");
+        Utterance.rate = 1;
+        speechSynthesis.speak(Utterance);
+      }
+      function t() {
+        const Utterance = new SpeechSynthesisUtterance("Transport");
+        Utterance.rate = 1;
+        speechSynthesis.speak(Utterance);
+      }
+      function y() {
+        const Utterance = new SpeechSynthesisUtterance("Welcom To Yara's Game");
+        Utterance.rate = 1;
+        speechSynthesis.speak(Utterance);
+      }
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "100%";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+  </body>
+</html>
